@@ -36,17 +36,17 @@ if (!isset($_SESSION["lan"])) {
 $lan = $_SESSION["lan"];
 session_write_close();
 
-if ((!isset($_POST["u"]))
-    || (!isset($_POST["p"]))
-    || (!isset($_POST["h"]))
+if ((!isset($_REQUEST["u"]))
+    || (!isset($_REQUEST["p"]))
+    || (!isset($_REQUEST["h"]))
 ) {
-    die("ERR");
+    die("ERR - incomplete data");
 }
-if (( strlen($_POST["u"]) < MIN_USER_LENGTH )
-    || ( strlen($_POST["p"]) < MIN_PASS_LENGTH )
-    || ( strlen($_POST["h"]) < MIN_HOST_LENGTH )
+if (( strlen($_REQUEST["u"]) < MIN_USER_LENGTH )
+    || ( strlen($_REQUEST["p"]) < MIN_PASS_LENGTH )
+    || ( strlen($_REQUEST["h"]) < MIN_HOST_LENGTH )
 ) {
-    die("ERR");
+    die("ERR - invalid data");
 }
 
 
