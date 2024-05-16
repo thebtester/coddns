@@ -8,7 +8,7 @@
 
 ddnsconf=`cat /etc/passwd | grep $USER |head -1 | cut -f6 -d':'`"/.userdata"
 global_ddnsconf="/usr/share/ddns/userdata"
-dest="http://devel.coddns.org/cliupdate.php"
+dest="http://coddns.es/app/cliupdate.php"
 release=""
 installer=""
 
@@ -67,7 +67,7 @@ echo "  datos de conexion: "
 echo "  "$usuario"/"$password
 echo "  HOST: "$host
 echo "  conectando con servidor ddns"
-r=`curl --data 'u='$usuario'&p='$password'&h='$host $dest 2>/dev/null`
+r=`curl -L --data 'u='$usuario'&p='$password'&h='$host $dest 2>/dev/null`
 if [ $? -eq 0 ]; then
     echo "  conexion completada con exito"
     echo "  Recibido mensaje: "$r
