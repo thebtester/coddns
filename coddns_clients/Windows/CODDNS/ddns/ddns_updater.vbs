@@ -65,7 +65,7 @@ if WScript.Arguments.Count = 0 then
 	WScript.Quit 1
 end if
 
-sUrl = "http://coddns.org/cliupdate.php"
+sUrl = "https://coddns.es/cliupdate.php"
 sRequest = ReadConfiguration (WScript.Arguments(0))
 response = HTTPPost (sUrl, sRequest)
 WScript.echo response
