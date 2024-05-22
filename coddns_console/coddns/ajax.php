@@ -164,7 +164,7 @@ function list_hosts($data)
             if ($row["record"] == "A") {
                 echo long2ip($row["value"]);
             } else {
-                echo $row["value"];
+                echo $row["rtag"] ?? $row["value"];
             }
             ?></td>
             <?php
